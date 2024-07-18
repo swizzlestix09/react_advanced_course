@@ -2,10 +2,10 @@ import { ReactNode } from "react";
 
 type Props = {
   children: ReactNode
+  handleClick: () => void
 }
-const Button = ({ children }: Props) => {
+const Button = ({ handleClick, children }: Props) => {
 
-  const handleClick = () => console.log('Logging in...')
   return (
     <button onClick={handleClick}>{children}</button>
   )
