@@ -49,6 +49,13 @@ button {
   transition: border-color 0.25s;
 }
 
+button > svg {
+  margin-right: 7px;
+  color: green;
+  height: 30px;
+  width: 30px;
+}
+
 button:hover {
   border-color: #646cff;
 }
