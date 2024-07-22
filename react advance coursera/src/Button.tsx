@@ -1,13 +1,14 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
-  children: ReactNode
+  children: ReactNode,
+  size: string,
 }
 
-const Button = ({ children, ...rest }: Props) => {
+const Button = ({ children, size, ...rest }: Props) => {
 
   return (
-    <button {...rest}>{children}</button>
+    <button className={`button-${size}`} {...rest}> {children}</button >
   )
 }
 

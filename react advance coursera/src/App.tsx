@@ -6,11 +6,11 @@ function App() {
   const buttonText = 'click me'
 
   const handleClick = () => console.log('Logging in...')
-
+  const size = 'large'
 
   return (
     <main>
-      <Button onClick={handleClick}>
+      <Button size={size} onClick={handleClick}>
         <FaMoneyBill />
         {buttonText}
       </Button>
