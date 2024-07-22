@@ -10,7 +10,7 @@ function App() {
 
   return (
     <main>
-      <Button handleClick={handleClick}>
+      <Button onClick={handleClick}>
         <FaMoneyBill />
         {buttonText}
       </Button>

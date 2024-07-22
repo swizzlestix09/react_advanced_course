@@ -1,13 +1,13 @@
-import { ReactNode } from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 
-type Props = {
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode
-  handleClick: () => void
 }
-const Button = ({ handleClick, children }: Props) => {
+
+const Button = (props: Props) => {
 
   return (
-    <button onClick={handleClick}>{children}</button>
+    <button {...props}>{props.children}</button>
   )
 }
 
