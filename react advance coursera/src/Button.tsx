@@ -4,10 +4,10 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode
 }
 
-const Button = (props: Props) => {
+const Button = ({ children, ...rest }: Props) => {
 
   return (
-    <button {...props}>{props.children}</button>
+    <button {...rest}>{children}</button>
   )
 }
 
