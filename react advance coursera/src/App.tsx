@@ -6,11 +6,12 @@ function App() {
   const buttonText = 'click me'
 
   const handleClick = () => console.log('Logging in...')
-  const size = 'button-large'
+  const btnSize = 'button-large'
+  const btnColor = 'green'
 
   return (
     <main>
-      <Button size={size} onClick={handleClick}>
+      <Button size={btnSize} color={btnColor} onClick={handleClick}>
         <FaMoneyBill />
         {buttonText}
       </Button>
