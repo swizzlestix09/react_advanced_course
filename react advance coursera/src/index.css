@@ -91,3 +91,19 @@ button.button-large {
 .green {
   color: green;
 }
+
+button.success {
+  border-color: #047857;
+  background-color: #ECFDF5;
+  color: #047857;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+button.warning {
+
+}
+
+button.danger {
+
+}
