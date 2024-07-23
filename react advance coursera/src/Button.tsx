@@ -4,6 +4,7 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode,
   size: string,
   color: string,
+  variant: string,
 }
 
 /**
@@ -16,10 +17,10 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
    */
 
 
-const Button = ({ children, color, size, ...rest }: Props) => {
+const Button = ({ children, color, size, variant, ...rest }: Props) => {
 
   return (
-    <button className={`${size} ${color} ${'warning'}`} {...rest}> {children}</button >
+    <button className={`${size} ${color} ${variant}`} {...rest}> {children}</button >
   )
 }
 

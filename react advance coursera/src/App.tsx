@@ -1,7 +1,7 @@
 import Button from './Button'
 import './App.css'
 
-const urgencyNumber: number = 0;
+const urgencyNumber: number = 3;
 
 function App() {
   const buttonType = urgencyNumber;
@@ -28,7 +28,7 @@ function App() {
 
   return (
     <main>
-      <Button size={btnSize} color={btnColor} onClick={handleClick}>
+      <Button variant={buttonText.toLowerCase()} size={btnSize} color={btnColor} onClick={handleClick}>
         {buttonText}
       </Button>
     </main>
