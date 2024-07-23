@@ -111,9 +111,9 @@ button.warning {
 }
 
 button.danger {
-  border-color: #047857;
-  background-color: #ECFDF5;
-  color: #047857;
+  border-color: #F87171;
+  background-color: #FEF2F2;
+  color: #F87171;
   font-size: 1em;
   font-weight: 700;
 }
