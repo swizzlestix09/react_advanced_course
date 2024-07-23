@@ -92,18 +92,28 @@ button.button-large {
   color: green;
 }
 
+
+
 button.success {
   border-color: #047857;
   background-color: #ECFDF5;
   color: #047857;
-  font-size: 2em;
+  font-size: 1em;
   font-weight: 700;
 }
 
 button.warning {
-
+  border-color: #FBBF24;
+  background-color: #FFFBEB;
+  color: #FBBF24;
+  font-size: 1em;
+  font-weight: 700;
 }
 
 button.danger {
-
+  border-color: #047857;
+  background-color: #ECFDF5;
+  color: #047857;
+  font-size: 1em;
+  font-weight: 700;
 }

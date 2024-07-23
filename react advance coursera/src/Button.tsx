@@ -19,7 +19,7 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
 const Button = ({ children, color, size, ...rest }: Props) => {
 
   return (
-    <button className={`${size} ${color} ${'success'}`} {...rest}> {children}</button >
+    <button className={`${size} ${color} ${'warning'}`} {...rest}> {children}</button >
   )
 }
 

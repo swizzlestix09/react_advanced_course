@@ -1,6 +1,5 @@
 import Button from './Button'
 import './App.css'
-import { FaMoneyBill } from 'react-icons/fa'
 
 function App() {
   const buttonText = 'click me'
@@ -12,7 +11,6 @@ function App() {
   return (
     <main>
       <Button size={btnSize} color={btnColor} onClick={handleClick}>
-        <FaMoneyBill />
         {buttonText}
       </Button>
     </main>
