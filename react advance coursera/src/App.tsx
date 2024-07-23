@@ -6,7 +6,7 @@ function App() {
   const buttonText = 'click me'
 
   const handleClick = () => console.log('Logging in...')
-  const size = 'large'
+  const size = 'small'
 
   return (
     <main>
