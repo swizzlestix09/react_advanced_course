@@ -1,5 +1,6 @@
 
-//import { IoPersonSharp } from "react-icons/io5" <- default img
+import { ReactNode } from "react";
+import { IoPersonSharp } from "react-icons/io5"
 
 /**
  * Challenge: Create a flexible Avatar component!
@@ -24,9 +25,31 @@
  * avatars. Check the styles.css for some pre-written
  * color classes to add to the wrapper div.
  */
+type Props = {
+  children?: ReactNode,
+  src?: string,
+  alt?: string,
+}
 
-export default function Avatar() {
-  return (
-    <h2>Avatar component here!</h2>
-  )
+const COLORS = ['navy', 'pink', 'red', 'blue', 'green']
+export default function Avatar({ alt, src, children }: Props) {
+
+  if (src) {
+    return (
+      <figure className={`avatar`} >
+        <img src={src} alt={`${alt}` ?? 'ß'} />
+      </figure >
+    )
+  } else {
+
+    const selectedColor = COLORS.reduce((selected, item) => {
+      return Math.random() < 1 / (COLORS.length) ? item : selected;
+    }, COLORS[0]);
+
+    return (
+      <figure className={`avatar ${children && 'avatar-letters'} ${selectedColor} `} >
+        {children ?? <IoPersonSharp />}
+      </figure >
+    )
+  }
 }
