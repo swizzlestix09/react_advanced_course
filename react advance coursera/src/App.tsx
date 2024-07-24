@@ -1,4 +1,5 @@
 import Button from './Button'
+import Avatar from './assets/Avatar';
 import './App.css'
 
 const urgencyNumber: number = 3;
@@ -31,6 +32,11 @@ function App() {
       <Button variant={buttonText.toLowerCase()} size={btnSize} color={btnColor} onClick={handleClick}>
         {buttonText}
       </Button>
+      <Avatar src="./images/bob.jpg" alt="Bob Ziroll" />
+      <br />
+      <Avatar>BZ</Avatar>
+      <br />
+      <Avatar />
     </main>
   )
 }

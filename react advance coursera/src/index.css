@@ -117,3 +117,27 @@ button.danger {
   font-size: 1em;
   font-weight: 700;
 }
+
+/*
+Classes below will help with rendering random
+background colors for the extra credit
+*/
+.navy {
+  background-color: #1F2937;
+}
+
+.pink {
+  background-color: #DA6AEC;
+}
+
+.red {
+  background-color: #F43F5E;
+}
+
+.blue {
+  background-color: #2F74DC;
+}
+
+.green {
+  background-color: #22CD90;
+}
