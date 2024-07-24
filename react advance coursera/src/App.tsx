@@ -32,6 +32,8 @@ function App() {
       <Button variant={buttonText.toLowerCase()} size={btnSize} color={btnColor} onClick={handleClick}>
         {buttonText}
       </Button>
+      <Avatar src="/src/assets/image/zBWx8U01.svg" alt="Me" />
+      <br />
       <Avatar src="/src/assets/image/bob.jpg" alt="Bob Marley" />
       <br />
       <Avatar>BZ</Avatar>

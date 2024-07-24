@@ -38,9 +38,13 @@ const COLORS: Colors[] = ['navy', 'pink', 'red', 'blue', 'green']
 export default function Avatar({ alt, src, children }: Props) {
 
   if (src) {
-    return (
+    src.includes('svg') ? (
       <figure className={`avatar`} >
-        <img src={src} alt={`${alt}` ?? 'ß'} />
+        <svg src={src} alt={`${alt}` ?? ''} />
+      </figure >
+    ) : (
+      <figure className={`avatar`} >
+        <img src={src} alt={`${alt}` ?? ''} />
       </figure >
     )
   } else {
