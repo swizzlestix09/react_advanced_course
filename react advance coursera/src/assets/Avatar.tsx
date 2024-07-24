@@ -31,7 +31,10 @@ type Props = {
   alt?: string,
 }
 
-const COLORS = ['navy', 'pink', 'red', 'blue', 'green']
+type Colors = 'navy' | 'pink' | 'red' | 'blue' | 'green'
+
+const COLORS: Colors[] = ['navy', 'pink', 'red', 'blue', 'green']
+
 export default function Avatar({ alt, src, children }: Props) {
 
   if (src) {
@@ -42,7 +45,7 @@ export default function Avatar({ alt, src, children }: Props) {
     )
   } else {
 
-    const selectedColor = COLORS.reduce((selected, item) => {
+    const selectedColor: Colors = COLORS.reduce((selected, item) => {
       return Math.random() < 1 / (COLORS.length) ? item : selected;
     }, COLORS[0]);
 
