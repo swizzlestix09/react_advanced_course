@@ -1,4 +1,5 @@
 
+import { useState } from "react"
 import MenuButton from "./MenuButton"
 import MenuDropdown from "./MenuDropdown"
 
@@ -14,7 +15,7 @@ export default function Menu({ buttonText = "Menu", items }) {
    * new version won't be using them, but we'll come back to them
    * later.
    */
-  const [open, setOpen] = React.useState(true)
+  const [open, setOpen] = useState(true)
 
   function toggle() {
     setOpen(prevOpen => !prevOpen)
