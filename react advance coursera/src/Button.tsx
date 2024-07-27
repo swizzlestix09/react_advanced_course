@@ -1,10 +1,10 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
-  children: ReactNode,
-  size: string,
-  color: string,
-  variant: string,
+  children?: ReactNode,
+  size?: string,
+  color?: string,
+  variant?: string,
 }
 
 /**
