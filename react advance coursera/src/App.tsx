@@ -1,7 +1,10 @@
 import Button from './Button'
 import Avatar from './assets/Avatar';
+import MenuButton from './assets/menu/MenuButton';
+import MenuDropdown from './assets/menu/MenuDropdown';
 import './App.css'
 import Menu from './assets/menu/Menu';
+import { useState } from 'react';
 
 const urgencyNumber: number = 3;
 
@@ -45,13 +48,20 @@ function App() {
   const handleClick = () => console.log('Logging in...')
   const btnSize = 'button-large'
   const btnColor = 'green'
+  const menuText = 'Sports';
+  const menuItems = ["Tennis", "Pickleball", "Racquetball", "Squash"]
+  const [open, setOpen] = useState(true)
+
+  function toggle() {
+    setOpen(prevOpen => !prevOpen)
+  }
 
   return (
     <main>
-      <Menu
-        buttonText="Sports"
-        items={["Tennis", "Pickleball", "Racquetball", "Squash"]}
-      />
+      <Menu>
+        <MenuButton buttonText={menuText} onClick={toggle} />
+        {open && <MenuDropdown items={menuItems} />}
+      </Menu>
       <Button variant={buttonText.toLowerCase()} size={btnSize} color={btnColor} onClick={handleClick}>
         {buttonText}
       </Button>

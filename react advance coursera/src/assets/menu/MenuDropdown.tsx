@@ -1,9 +1,12 @@
 
-export default function MenuDropdown({ items }) {
+type Props = {
+  items: string[],
+}
+export default function MenuDropdown({ items }: Props) {
   return (
     <div className="menu-dropdown">
       {items.map(
-        item => (
+        (item: string) => (
           <div
             className="menu-item"
             key={item}
