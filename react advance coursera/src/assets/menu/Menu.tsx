@@ -24,3 +24,22 @@ export default function Menu({ children }: Props) {
     </div>
   )
 }
+
+
+// # Compound Components Quiz
+
+// 1. How would you explain the concept of compound components in React to someone who
+//    only knows the very basics of React?
+// making a set of components work together for keeping code clean and modular. Allows different parts of the component to be defined seperately but used together in a coordinated fashion. Like a sandwich:
+// Bread - main wrapper / component that holds eberything together
+//ingredients - child components that go inside parent / wrapper
+
+
+// 2. What are some examples of HTML elements that work together to add functionality
+//    or styling to each other?
+// menus, inputs, ordered / unordered lits
+
+
+// 3. How can compound components help you avoid having to drill props multiple levels
+//    down?
+// compounding component places all components being used on one page, destroying potential multiple levels of code that would create prop drilling
