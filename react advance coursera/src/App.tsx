@@ -2,7 +2,7 @@ import Button from './Button'
 import Avatar from './assets/Avatar';
 import MenuButton from './assets/menu/MenuButton';
 import MenuDropdown from './assets/menu/MenuDropdown';
-import './App.css'
+import MenuItem from './assets/menu/MenuItem';
 import Menu from './assets/menu/Menu';
 import { useState } from 'react';
 
@@ -50,17 +50,16 @@ function App() {
   const btnColor = 'green'
   const menuText = 'Sports';
   const menuItems = ["Tennis", "Pickleball", "Racquetball", "Squash"]
-  const [open, setOpen] = useState(true)
-
-  function toggle() {
-    setOpen(prevOpen => !prevOpen)
-  }
 
   return (
     <main>
       <Menu>
-        <MenuButton buttonText={menuText} onClick={toggle} />
-        {open && <MenuDropdown items={menuItems} />}
+        <MenuButton>
+          {menuText}
+        </MenuButton>
+        <MenuDropdown>
+          {menuItems.map(item => <MenuItem key={item}>{item}</MenuItem>)}
+        </MenuDropdown>
       </Menu>
       <Button variant={buttonText.toLowerCase()} size={btnSize} color={btnColor} onClick={handleClick}>
         {buttonText}
@@ -72,7 +71,7 @@ function App() {
       <Avatar>BZ</Avatar>
       <br />
       <Avatar />
-    </main>
+    </main >
   )
 }
 

@@ -3,9 +3,10 @@ import { ReactNode } from "react"
 type Props = {
   children: ReactNode,
 }
-export default function MenuDropdown({ children }: Props) {
+
+export default function MenuItem({ children }: Props) {
   return (
-    <div className="menu-dropdown">
+    <div className="menu-item">
       {children}
     </div>
   )
