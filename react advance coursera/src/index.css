@@ -217,3 +217,18 @@ background colors for the extra credit
 .menu-item:not(:last-child) {
   border-bottom: 1px solid #6B7280;
 }
+
+
+button.dark-theme {
+  border: 1px solid #F0F9FF;
+  background-color: #0C4A6E;
+  color: #F0F9FF;
+}
+
+button.light-theme {
+  border: 1px solid #0C4A6E;
+  background-color: #F0F9FF;
+  color: #0C4A6E;
+
+}
+

@@ -22,7 +22,7 @@ export default function Menu({ children }: Props) {
 
   function toggle() {
     setOpen(prevOpen => !prevOpen)
-    console.log('working? ')
+
   }
 
   return (

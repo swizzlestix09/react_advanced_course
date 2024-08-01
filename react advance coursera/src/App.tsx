@@ -4,9 +4,11 @@ import MenuButton from './assets/menu/MenuButton';
 import MenuDropdown from './assets/menu/MenuDropdown';
 import MenuItem from './assets/menu/MenuItem';
 import Menu from './assets/menu/Menu';
-import { useState } from 'react';
+import { createContext } from 'react';
 
 const urgencyNumber: number = 3;
+
+const ColorTheme = createContext('light')
 
 function App() {
   const buttonType = urgencyNumber;
@@ -52,26 +54,28 @@ function App() {
   const menuItems = ["Tennis", "Pickleball", "Racquetball", "Squash"]
 
   return (
-    <main>
-      <Menu>
-        <MenuButton>
-          {menuText}
-        </MenuButton>
-        <MenuDropdown>
-          {menuItems.map(item => <MenuItem key={item}>{item}</MenuItem>)}
-        </MenuDropdown>
-      </Menu>
-      <Button variant={buttonText.toLowerCase()} size={btnSize} color={btnColor} onClick={handleClick}>
-        {buttonText}
-      </Button>
-      <Avatar src="/src/assets/image/zBWx8U01.svg" alt="Me" />
-      <br />
-      <Avatar src="/src/assets/image/bob.jpg" alt="Bob Marley" />
-      <br />
-      <Avatar>BZ</Avatar>
-      <br />
-      <Avatar />
-    </main >
+    <ColorTheme.Provider value="light">
+      <main>
+        <Menu>
+          <MenuButton>
+            {menuText}
+          </MenuButton>
+          <MenuDropdown>
+            {menuItems.map(item => <MenuItem key={item}>{item}</MenuItem>)}
+          </MenuDropdown>
+        </Menu>
+        <Button variant={buttonText.toLowerCase()} size={btnSize} color={btnColor} onClick={handleClick}>
+          {buttonText}
+        </Button>
+        <Avatar src="/src/assets/image/zBWx8U01.svg" alt="Me" />
+        <br />
+        <Avatar src="/src/assets/image/bob.jpg" alt="Bob Marley" />
+        <br />
+        <Avatar>BZ</Avatar>
+        <br />
+        <Avatar />
+      </main >
+    </ColorTheme.Provider>
   )
 }
 
