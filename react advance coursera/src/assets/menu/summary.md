@@ -10,3 +10,5 @@ We can:
 
 - use an API called React.Children
 - React Context
+
+React.Children not ideal. This is a fragile method in which to do things. Also limited in depth
