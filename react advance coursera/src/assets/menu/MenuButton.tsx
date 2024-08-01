@@ -4,10 +4,8 @@ import Button from "../../Button"
 type Props = {
   children: ReactNode,
   onClick?: () => void,
-  open?: boolean,
 }
-export default function MenuButton({ onClick, open, children }: Props) {
-  console.log('In MenuButton: ', open)
+export default function MenuButton({ onClick, children }: Props) {
   return (
     <Button onClick={onClick}>{children}</Button>
   )
