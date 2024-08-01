@@ -1,8 +1,9 @@
 
-import { ReactNode } from "react"
-
+import { ReactElement, useState, Children, cloneElement } from "react"
+// ReactNode is for children that require more primitiveesque types , while
+// react elements are for specific element types
 type Props = {
-  children: ReactNode,
+  children: ReactElement[],
 }
 
 export default function Menu({ children }: Props) {
@@ -17,10 +18,20 @@ export default function Menu({ children }: Props) {
    * new version won't be using them, but we'll come back to them
    * later.
    */
+  const [open, setOpen] = useState(true)
+
+  function toggle() {
+    setOpen(prevOpen => !prevOpen)
+  }
 
   return (
     <div className="menu">
-      {children}
+      {Children.map(children, (child) => {
+        return cloneElement(child, {
+          toggle,
+          open,
+        })
+      })}
     </div>
   )
 }
