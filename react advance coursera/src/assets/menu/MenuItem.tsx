@@ -9,5 +9,6 @@ export default function MenuItem({ children }: Props) {
     <div className="menu-item">
       {children}
     </div>
+
   )
 }

@@ -2,10 +2,11 @@ import { ReactNode } from "react"
 import Button from "../../Button"
 
 type Props = {
-  children: ReactNode
+  children: ReactNode,
+  onClick?: () => void
 }
-export default function MenuButton({ children }: Props) {
+export default function MenuButton({ onClick, children }: Props) {
   return (
-    <Button >{children}</Button>
+    <Button onClick={onClick}>{children}</Button>
   )
 }

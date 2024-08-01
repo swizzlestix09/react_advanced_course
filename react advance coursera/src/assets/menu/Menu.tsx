@@ -22,13 +22,14 @@ export default function Menu({ children }: Props) {
 
   function toggle() {
     setOpen(prevOpen => !prevOpen)
+    console.log('working? ')
   }
 
   return (
     <div className="menu">
       {Children.map(children, (child) => {
         return cloneElement(child, {
-          toggle,
+          onClick: toggle,
           open,
         })
       })}
