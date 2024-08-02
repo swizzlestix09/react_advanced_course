@@ -1,10 +1,11 @@
-import { ReactNode } from "react"
-
+import { ReactNode, useContext } from "react"
+import { MenuProvider } from "./Menu"
 type Props = {
   children: ReactNode,
-  open?: boolean,
+
 }
-export default function MenuDropdown({ open, children }: Props) {
+export default function MenuDropdown({ children }: Props) {
+  const open = useContext(MenuProvider)
 
   return (
     <>

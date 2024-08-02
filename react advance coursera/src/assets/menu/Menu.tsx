@@ -1,10 +1,12 @@
 
-import { ReactElement, useState, Children, cloneElement } from "react"
+import { ReactElement, useState, Children, cloneElement, createContext } from "react"
 // ReactNode is for children that require more primitiveesque types , while
 // react elements are for specific element types
 type Props = {
   children: ReactElement[],
 }
+
+export const MenuProvider = createContext(false)
 
 export default function Menu({ children }: Props) {
   /**
@@ -26,14 +28,16 @@ export default function Menu({ children }: Props) {
   }
 
   return (
-    <div className="menu">
-      {Children.map(children, (child) => {
-        return cloneElement(child, {
-          onClick: toggle,
-          open,
-        })
-      })}
-    </div>
+    <MenuProvider.Provider value={false}>
+      <div className="menu">
+        {Children.map(children, (child) => {
+          return cloneElement(child, {
+            onClick: toggle,
+            open,
+          })
+        })}
+      </div>
+    </MenuProvider.Provider>
   )
 }
 
