@@ -8,6 +8,11 @@ export const ThemeContext = React.createContext('')
 export default function App() {
   const [colorTheme, setColorTheme] = useState('light')
 
+  const changeColorTheme = () => {
+    setColorTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light')
+
+  }
+
   return (
     <ThemeContext.Provider value={colorTheme}>
       <div className="container dark-theme">
