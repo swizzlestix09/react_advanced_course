@@ -1,11 +1,13 @@
-import { useContext } from "react"
+import { ButtonHTMLAttributes, useContext } from "react"
 import { ThemeContext } from "./ThemeContext"
 
-export default function Button() {
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
+
+export default function Button(props: ButtonProps) {
 
   const { colorTheme, toggleTheme } = useContext(ThemeContext)
   return (
-    <button className={`${colorTheme}-theme`} onClick={toggleTheme}>
+    <button className={`${colorTheme}-theme`} onClick={toggleTheme} {...props}>
       Switch Theme
     </button>
   )

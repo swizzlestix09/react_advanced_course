@@ -1,6 +1,5 @@
 
 import { ReactElement } from "react"
-import MenuThemeProvider from "./MenuContext"
 // ReactNode is for children that require more primitivesque types , while
 // react elements are for specific element types
 type Props = {
@@ -23,12 +22,9 @@ export default function Menu({ children }: Props) {
 
 
   return (
-    <MenuThemeProvider>
-      <div className="menu">
-        {children}
-      </div>
-    </MenuThemeProvider>
-
+    <div className="menu">
+      {children}
+    </div>
   )
 }
 

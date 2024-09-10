@@ -5,7 +5,7 @@ type Props = {
 
 }
 export default function MenuDropdown({ children }: Props) {
-  const open = useContext(MenuContext)
+  const { open } = useContext(MenuContext)
   console.log(open)
   return (
     <>

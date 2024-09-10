@@ -20,10 +20,12 @@ export default function MenuThemeProvider({ children }: MenuThemeProps) {
 
   const toggleMenu = () => {
     setMenuOpen(prevOpen => !prevOpen)
-    console.log('is this working?')
+    console.log('being clicked!')
   }
 
-  return (<MenuContext.Provider value={{ open, toggleMenu }}>
-    {children}
-  </MenuContext.Provider>)
+  return (
+    <MenuContext.Provider value={{ open, toggleMenu }}>
+      {children}
+    </MenuContext.Provider>
+  )
 }
