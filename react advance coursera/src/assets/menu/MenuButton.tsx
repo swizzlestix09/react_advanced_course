@@ -13,3 +13,6 @@ export default function MenuButton({ children }: Props) {
     <Button onClick={toggleMenu}>{children}</Button>
   )
 }
+
+
+// Use context explicitly, and where required. Do not pass down as prop. smh.
