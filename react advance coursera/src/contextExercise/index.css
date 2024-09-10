@@ -15,6 +15,7 @@ body {
 header {
   height: 6rem;
   display: flex;
+  width: 500px;
   align-items: center;
   padding-left: 1rem;
 }

@@ -1,12 +1,12 @@
 import { ReactNode, useContext } from "react"
-import { MenuProvider } from "./Menu"
+import { MenuContext } from "./MenuContext"
 type Props = {
   children: ReactNode,
 
 }
 export default function MenuDropdown({ children }: Props) {
-  const open = useContext(MenuProvider)
-
+  const open = useContext(MenuContext)
+  console.log(open)
   return (
     <>
       {open && <div className="menu-dropdown">

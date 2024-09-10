@@ -1,12 +1,12 @@
 
-import { ReactElement, useState, Children, cloneElement, createContext } from "react"
+import { ReactElement } from "react"
+import MenuThemeProvider from "./MenuContext"
 // ReactNode is for children that require more primitivesque types , while
 // react elements are for specific element types
 type Props = {
   children: ReactElement[],
 }
 
-export const MenuProvider = createContext(false)
 
 export default function Menu({ children }: Props) {
   /**
@@ -20,24 +20,15 @@ export default function Menu({ children }: Props) {
    * new version won't be using them, but we'll come back to them
    * later.
    */
-  const [open, setOpen] = useState(true)
 
-  function toggle() {
-    setOpen(prevOpen => !prevOpen)
-
-  }
 
   return (
-    <MenuProvider.Provider value={false}>
+    <MenuThemeProvider>
       <div className="menu">
-        {Children.map(children, (child) => {
-          return cloneElement(child, {
-            onClick: toggle,
-            open,
-          })
-        })}
+        {children}
       </div>
-    </MenuProvider.Provider>
+    </MenuThemeProvider>
+
   )
 }
 
