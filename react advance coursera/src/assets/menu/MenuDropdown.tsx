@@ -5,11 +5,11 @@ type Props = {
 
 }
 export default function MenuDropdown({ children }: Props) {
-  const { open } = useContext(MenuContext)
-  console.log(open)
+  const { isMenuOpen } = useContext(MenuContext)
+
   return (
     <>
-      {open && <div className="menu-dropdown">
+      {isMenuOpen && <div className="menu-dropdown">
         {children}
       </div>}
     </>

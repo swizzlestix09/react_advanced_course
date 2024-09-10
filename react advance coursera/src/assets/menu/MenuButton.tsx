@@ -1,12 +1,15 @@
-import { ReactNode } from "react"
+import { ReactNode, useContext } from "react"
 import Button from "../../Button"
+import { MenuContext } from "./MenuContext"
 
 type Props = {
   children: ReactNode,
-  onClick?: () => void,
+
 }
-export default function MenuButton({ onClick, children }: Props) {
+export default function MenuButton({ children }: Props) {
+
+  const { toggleMenu } = useContext(MenuContext)
   return (
-    <Button onClick={onClick}>{children}</Button>
+    <Button onClick={toggleMenu}>{children}</Button>
   )
 }

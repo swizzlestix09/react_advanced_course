@@ -2,29 +2,29 @@ import { createContext, ReactNode, useState } from "react";
 
 
 type MenuThemeProps = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 type MenuContextType = {
-  open: boolean,
-  toggleMenu: () => void,
-}
+  isMenuOpen: boolean;
+  toggleMenu: () => void;
+};
 
 export const MenuContext = createContext<MenuContextType>({
-  open: false,
+  isMenuOpen: false,
   toggleMenu: () => { },
-})
+});
+
 
 export default function MenuThemeProvider({ children }: MenuThemeProps) {
-  const [open, setMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
-    setMenuOpen(prevOpen => !prevOpen)
-    console.log('being clicked!')
+    setIsMenuOpen(prevOpen => !prevOpen)
   }
 
   return (
-    <MenuContext.Provider value={{ open, toggleMenu }}>
+    <MenuContext.Provider value={{ isMenuOpen, toggleMenu }}>
       {children}
     </MenuContext.Provider>
   )
