@@ -1,25 +1,21 @@
-import React, { useState } from "react"
 import Header from "./Header"
 import Button from "./Button"
 import './index.css'
+import ThemeProvider from "./ThemeContext"
 
-export const ThemeContext = React.createContext('')
+
+
 
 export default function App() {
-  const [colorTheme, setColorTheme] = useState('light')
 
-  const changeColorTheme = () => {
-    setColorTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light')
-
-  }
 
   return (
-    <ThemeContext.Provider value={colorTheme}>
+    <ThemeProvider >
       <div className="container dark-theme">
         <Header />
         <Button />
       </div>
-    </ThemeContext.Provider>
+    </ThemeProvider>
   )
 }
 

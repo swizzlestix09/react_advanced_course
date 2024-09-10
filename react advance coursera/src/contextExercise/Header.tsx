@@ -1,13 +1,14 @@
 import { useContext } from "react"
-import { ThemeContext } from "./App"
+import { ThemeContext } from "./ThemeContext"
 import { capitalize } from "../assets/utils"
 
 export default function Header() {
   const value = useContext(ThemeContext)
-  console.log(value)
+  const { colorTheme } = value;
+
   return (
-    <header className={`${value}-theme`}>
-      <h1>{`${capitalize(value)}`} Theme</h1>
+    <header className={`${colorTheme}-theme`}>
+      <h1>{colorTheme && `${capitalize(colorTheme)}`} Theme</h1>
     </header >
   )
 }

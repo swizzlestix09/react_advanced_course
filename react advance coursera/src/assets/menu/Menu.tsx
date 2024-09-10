@@ -1,6 +1,6 @@
 
 import { ReactElement, useState, Children, cloneElement, createContext } from "react"
-// ReactNode is for children that require more primitiveesque types , while
+// ReactNode is for children that require more primitivesque types , while
 // react elements are for specific element types
 type Props = {
   children: ReactElement[],
