@@ -1,9 +1,6 @@
 import Button from './Button'
 import Avatar from './assets/Avatar';
-import MenuButton from './assets/menu/MenuButton';
-import MenuDropdown from './assets/menu/MenuDropdown';
-import MenuItem from './assets/menu/MenuItem';
-import Menu from './assets/menu/Menu';
+import Menu from './assets/menu/index';
 import { createContext } from 'react';
 
 const urgencyNumber: number = 3;
@@ -57,12 +54,12 @@ function App() {
     <ColorTheme.Provider value="light">
       <main>
         <Menu>
-          <MenuButton>
+          <Menu.Button>
             {menuText}
-          </MenuButton>
-          <MenuDropdown>
-            {menuItems.map(item => <MenuItem key={item}>{item}</MenuItem>)}
-          </MenuDropdown>
+          </Menu.Button>
+          <Menu.Dropdown>
+            {menuItems.map(item => <Menu.Item key={item}>{item}</Menu.Item>)}
+          </Menu.Dropdown>
         </Menu>
         <Button variant={buttonText.toLowerCase()} size={btnSize} color={btnColor} onClick={handleClick}>
           {buttonText}
