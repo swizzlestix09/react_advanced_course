@@ -19,7 +19,6 @@ export function ToggleThemeProvider({ children }: ToggleThemeProps) {
   const [toggleState, setToogleState] = useState<boolean>(false);
 
   const toggle = () => {
-    console.log('toggle triggered', toggleState)
     setToogleState(prevState => !prevState)
   }
   return (

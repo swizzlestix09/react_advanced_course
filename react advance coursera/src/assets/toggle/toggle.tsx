@@ -1,7 +1,7 @@
 import { FC, memo, ReactNode, } from "react";
 import ToggleOn from "./ToggleOn";
 import ToggleButton from "./ToggleButton";
-
+import ToggleOff from "./ToggleOff";
 
 import {
   ToggleThemeProvider
@@ -21,11 +21,13 @@ const Toggle = memo(function Toggle({ children }: Props) {
 
 interface ToggleComponents extends FC<{ children: ReactNode }> {
   On: typeof ToggleOn;
+  Off: typeof ToggleOff
   Button: typeof ToggleButton;
 }
 
 const ToggleWithComponents: ToggleComponents = Object.assign(Toggle, {
   On: ToggleOn,
+  Off: ToggleOff,
   Button: ToggleButton
 })
 
