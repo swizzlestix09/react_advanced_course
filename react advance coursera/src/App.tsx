@@ -1,5 +1,5 @@
 import Button from './Button'
-import Avatar from './assets/Avatar';
+import MenuThemeProvider from './assets/menu/MenuContext';
 import Menu from './assets/menu/index';
 import { createContext } from 'react';
 
@@ -53,24 +53,19 @@ function App() {
   return (
     <ColorTheme.Provider value="light">
       <main>
-        <Menu>
-          <Menu.Button>
-            {menuText}
-          </Menu.Button>
-          <Menu.Dropdown>
-            {menuItems.map(item => <Menu.Item key={item}>{item}</Menu.Item>)}
-          </Menu.Dropdown>
-        </Menu>
+        <MenuThemeProvider>
+          <Menu>
+            <Menu.Button>
+              {menuText}
+            </Menu.Button>
+            <Menu.Dropdown>
+              {menuItems.map(item => <Menu.Item key={item}>{item}</Menu.Item>)}
+            </Menu.Dropdown>
+          </Menu>
+        </MenuThemeProvider>
         <Button variant={buttonText.toLowerCase()} size={btnSize} color={btnColor} onClick={handleClick}>
           {buttonText}
         </Button>
-        <Avatar src="/src/assets/image/zBWx8U01.svg" alt="Me" />
-        <br />
-        <Avatar src="/src/assets/image/bob.jpg" alt="Bob Marley" />
-        <br />
-        <Avatar>BZ</Avatar>
-        <br />
-        <Avatar />
       </main >
     </ColorTheme.Provider>
   )

@@ -1,13 +1,15 @@
 
-import { ReactElement } from "react"
+import { FC, ReactNode } from "react"
+import MenuButton from "./MenuButton";
+import MenuDropdown from "./MenuDropdown";
+import MenuItem from "./MenuItem";
 // ReactNode is for children that require more primitivesque types , while
 // react elements are for specific element types
 type Props = {
-  children: ReactElement[],
+  children: ReactNode,
 }
 
-
-export default function Menu({ children }: Props) {
+function Menu({ children }: Props) {
   /**
    * Note: leave the div className="menu" here and render
    * the children inside that div. Notice this component will become
@@ -28,6 +30,19 @@ export default function Menu({ children }: Props) {
   )
 }
 
+interface MenuComponent extends FC<{ children: React.ReactNode }> {
+  Button: typeof MenuButton;
+  Dropdown: typeof MenuDropdown;
+  Item: typeof MenuItem;
+}
+
+const MenuWithComponents: MenuComponent = Object.assign(Menu, {
+  Button: MenuButton,
+  Dropdown: MenuDropdown,
+  Item: MenuItem,
+});
+
+export default MenuWithComponents;
 
 // # Compound Components Quiz
 

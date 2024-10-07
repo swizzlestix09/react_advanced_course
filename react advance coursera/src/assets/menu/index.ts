@@ -1,10 +1,10 @@
-import MenuButton from "./menu/MenuButton";
-import MenuDropdown from "./menu/MenuDropdown";
-import MenuItem from "./menu/MenuItem";
-import Menu from "./assets/menu/Menu";
+import MenuButton from "./MenuButton";
+import MenuDropdown from "./MenuDropdown";
+import MenuItem from "./MenuItem";
+import Menu from "./Menu";
 
 Menu.Button = MenuButton;
-Menu.MenuDropdown = MenuDropdown;
+Menu.Dropdown = MenuDropdown;
 Menu.Item = MenuItem;
 
 export default Menu;
