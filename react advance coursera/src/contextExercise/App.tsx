@@ -9,7 +9,8 @@ import MenuItem from "../assets/menu/MenuItem"
 
 import MenuThemeProvider from "../assets/menu/MenuContext"
 import { useContext } from "react"
-
+import Star from "../assets/Star"
+import Toggle from "../assets/toggle/Toggle"
 
 
 
@@ -27,10 +28,13 @@ export default function App() {
           ))}
         </MenuDropdown>
       </Menu>
-      <div className={`container ${colorTheme}-theme`}>
+      <div className={`container ${colorTheme}-theme h-fit`} >
         <Header />
         <Button />
       </div>
+      <Toggle>
+        <Star />
+      </Toggle>
     </MenuThemeProvider >
 
   )

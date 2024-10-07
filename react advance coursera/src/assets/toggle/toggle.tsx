@@ -1,15 +1,41 @@
-import { memo, useState } from "react";
+import { memo, useState, ReactNode, createContext } from "react";
 
+type Props = {
+  children: ReactNode
+}
 
-const Toggle = memo(function Toggle() {
+type ToggleThemeProps = {
+  children: ReactNode;
+}
+
+type ToggleContextType = {
+  toggleState: boolean,
+  toggle: () => void;
+}
+
+export const ToggleContext = createContext<ToggleContextType>({
+  toggleState: false,
+  toggle: () => { }
+})
+
+export function ToggleThemeProvider({ children }: ToggleThemeProps) {
+
   const [toggleState, setToogleState] = useState<boolean>(false);
 
   const toggle = () => setToogleState(prevState => !prevState)
+  return (
+    <ToggleContext.Provider value={{ toggleState, toggle }}>
+      {children}
+    </ToggleContext.Provider>
+  )
+}
+
+const Toggle = memo(function Toggle({ children }: Props) {
 
   return (
-    <div>
-      Hello fwend
-    </div>
+    <ToggleThemeProvider>
+      {children}
+    </ToggleThemeProvider>
   )
 })
 
