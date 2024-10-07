@@ -8,11 +8,8 @@ type Props = {
 
 const ToggleOn = memo(function ToggleOn({ children }: Props) {
   const { toggleState } = useContext(ToggleContext)
-  return (
-    <>
-      {toggleState ? { children } : null}
-    </>
-  )
+
+  return toggleState ? children : null
 })
 
 export default ToggleOn

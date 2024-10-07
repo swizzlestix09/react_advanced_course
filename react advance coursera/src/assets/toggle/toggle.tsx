@@ -1,4 +1,8 @@
-import { memo, ReactNode, } from "react";
+import { FC, memo, ReactNode, } from "react";
+import ToggleOn from "./ToggleOn";
+import ToggleButton from "./ToggleButton";
+
+
 import {
   ToggleThemeProvider
 } from "./ToggleContext";
@@ -15,4 +19,14 @@ const Toggle = memo(function Toggle({ children }: Props) {
   )
 })
 
-export default Toggle
+interface ToggleComponents extends FC<{ children: ReactNode }> {
+  ToggleOn: typeof ToggleOn;
+  ToggleButton: typeof ToggleButton;
+}
+
+const ToggleWithComponents: ToggleComponents = Object.assign(Toggle, {
+  ToggleOn: ToggleOn,
+  ToggleButton: ToggleButton
+})
+
+export default ToggleWithComponents

@@ -33,7 +33,11 @@ export default function App() {
         <Button />
       </div>
       <Toggle>
-        <Star />
+        <Toggle.Button>
+
+          <Star />
+        </Toggle.Button>
+        <Toggle.On>The toggle is on</Toggle.On>
       </Toggle>
     </MenuThemeProvider >
 
