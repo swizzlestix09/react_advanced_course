@@ -20,13 +20,13 @@ const Toggle = memo(function Toggle({ children }: Props) {
 })
 
 interface ToggleComponents extends FC<{ children: ReactNode }> {
-  ToggleOn: typeof ToggleOn;
-  ToggleButton: typeof ToggleButton;
+  On: typeof ToggleOn;
+  Button: typeof ToggleButton;
 }
 
 const ToggleWithComponents: ToggleComponents = Object.assign(Toggle, {
-  ToggleOn: ToggleOn,
-  ToggleButton: ToggleButton
+  On: ToggleOn,
+  Button: ToggleButton
 })
 
 export default ToggleWithComponents

@@ -34,7 +34,6 @@ export default function App() {
       </div>
       <Toggle>
         <Toggle.Button>
-
           <Star />
         </Toggle.Button>
         <Toggle.On>The toggle is on</Toggle.On>

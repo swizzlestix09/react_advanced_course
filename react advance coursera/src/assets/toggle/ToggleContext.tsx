@@ -18,7 +18,10 @@ export function ToggleThemeProvider({ children }: ToggleThemeProps) {
 
   const [toggleState, setToogleState] = useState<boolean>(false);
 
-  const toggle = () => setToogleState(prevState => !prevState)
+  const toggle = () => {
+    console.log('toggle triggered', toggleState)
+    setToogleState(prevState => !prevState)
+  }
   return (
     <ToggleContext.Provider value={{ toggleState, toggle }}>
       {children}

@@ -4,11 +4,11 @@ import { ToggleContext } from "./toggle/ToggleContext"
 import { useContext } from "react"
 
 export default function Star() {
-  const { toggleState, toggle } = useContext(ToggleContext)
+  const { toggleState } = useContext(ToggleContext)
 
   return (
     toggleState ?
-      <BsStarFill className="star filled" onClick={toggle} /> :
-      <BsStar className="star " onClick={toggle} />
+      <BsStarFill className="star filled" /> :
+      <BsStar className="star " />
   )
 }
