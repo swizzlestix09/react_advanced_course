@@ -1,6 +1,6 @@
 
 import { BsStar, BsStarFill } from "react-icons/bs"
-import { ToggleContext } from "./toggle/Toggle"
+import { ToggleContext } from "./toggle/ToggleContext"
 import { useContext } from "react"
 
 export default function Star() {
