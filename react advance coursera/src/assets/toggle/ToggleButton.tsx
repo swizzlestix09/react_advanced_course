@@ -5,8 +5,8 @@ type Props = {
   children: ReactNode
 }
 const ToggleButton = memo(function ToggleButton({ children }: Props) {
-  const { toggleState, toggle } = useContext(ToggleContext)
-  console.log(toggleState)
+  const { toggle } = useContext(ToggleContext)
+
   return (
     <div onClick={toggle}>
       {children}

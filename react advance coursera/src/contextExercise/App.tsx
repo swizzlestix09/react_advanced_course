@@ -9,7 +9,6 @@ import MenuItem from "../assets/menu/MenuItem"
 
 import MenuThemeProvider from "../assets/menu/MenuContext"
 import { useContext } from "react"
-import Star from "../assets/Star"
 import Toggle from "../assets/toggle/Toggle"
 
 import { BsStar, BsStarFill } from "react-icons/bs"
